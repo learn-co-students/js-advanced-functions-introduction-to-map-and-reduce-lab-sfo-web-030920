@@ -43,32 +43,46 @@ function reduceToTotal(array, startingPoint = 0) {
   return total;
 }
 
-function reduceToAllTrue(array) {
-  const trueElements = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i]) {
-      trueElements.push(array[i]);
-    }
-  }
+// function reduceToAllTrue(array) {
+//   const trueElements = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (array[i]) {
+//       trueElements.push(array[i]);
+//     }
+//   }
 
-  if (trueElements.length === array.length) {
-    return true;
-  } else {
-    return false;
+//   if (trueElements.length === array.length) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+function reduceToAllTrue(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (!array[i]) return false;
   }
+  return true;
 }
 
-function reduceToAnyTrue(array) {
-  const falseElements = [];
-  for (let i = 0; i < array.length; i++) {
-    if (!array[i]) {
-      falseElements.push(array[i]);
-    }
-  }
+// function reduceToAnyTrue(array) {
+//   const falseElements = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (!array[i]) {
+//       falseElements.push(array[i]);
+//     }
+//   }
 
-  if (falseElements.length === array.length) {
-    return false;
-  } else {
-    return true;
+//   if (falseElements.length === array.length) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+function reduceToAnyTrue(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) return true;
   }
+  return false;
 }
